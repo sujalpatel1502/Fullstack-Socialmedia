@@ -11,6 +11,7 @@ import "./style.scss"
 import { DarkModeContext } from './context/darkModeContext'
 import { AuthContext } from './context/authContext'
 import { QueryClient,  QueryClientProvider,useQuery } from "@tanstack/react-query";
+import Todo from './profile/Todo'
 function App() {
   const {darkMode}=useContext(DarkModeContext);
   console.log(darkMode);
@@ -50,6 +51,10 @@ function App() {
         {
           path:"/",
           element:<Home/>
+        },
+        {
+          path:"/todo",
+          element:<Todo/>
         },
         {
           path:"/profile/:id",

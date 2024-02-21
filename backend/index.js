@@ -4,6 +4,7 @@ import authroutes from "./routes/auth.js";
 import userroutes from "./routes/users.js";
 import postroutes from "./routes/posts.js";
 import commentroutes from "./routes/comments.js";
+import relationshipsroutes from "./routes/relationships.js"
 import likeroutes from "./routes/likes.js";
 import cors from "cors"
 import cookieParser from 'cookie-parser';
@@ -45,6 +46,7 @@ app.use("/api/users",userroutes);
 app.use("/api/posts",postroutes);
 app.use("/api/comments",commentroutes);
 app.use("/api/likes",likeroutes);
+app.use("/api/relationships",relationshipsroutes)
 
 
 

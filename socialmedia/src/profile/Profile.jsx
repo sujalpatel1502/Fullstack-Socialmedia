@@ -24,6 +24,16 @@ const Profile = () => {
       return res.data;
   })
 )
+
+const {data:relationshipData}=useQuery(["relationship"],()=>
+makeRequest.get("/relationships?followedUserId="+userId).then((res)=>{
+    return res.data;
+})
+)
+console.log("fenfnfn",relationshipData);
+const handleFollow=()=>{
+  
+}
 console.log("profileee dataaaaa",data);
   return (
     <div className="profile">
@@ -70,7 +80,7 @@ console.log("profileee dataaaaa",data);
                 <span>{data?.website}</span>
               </div>
             </div>
-        {  currentUser?.id == userId ? <button>follow</button>:null}
+        {  currentUser?.id === userId ? <button>update</button>:<button onClick={handleFollow}>{relationshipData.includes(currentUser.id)?"following":"follow"}</button>}
           </div>
           <div className="right">
             <EmailOutlinedIcon />
